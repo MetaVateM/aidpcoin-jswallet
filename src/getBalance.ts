@@ -1,6 +1,6 @@
-import { methods } from "@ravenrebels/ravencoin-rpc";
+import { methods } from "@metavatem/aidpcoin-rpc";
 import { ONE_FULL_COIN } from "./contants";
-import { Wallet } from "./ravencoinWallet";
+import { Wallet } from "./aidpcoinWallet";
 
 export async function getBalance(wallet:Wallet, addresses: string[]) {
   const includeAssets = false;

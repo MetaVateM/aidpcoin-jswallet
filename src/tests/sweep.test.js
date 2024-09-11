@@ -1,4 +1,4 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 const expect = require("chai").expect;
 it("Test sweep", async () => {
   /* 
@@ -9,10 +9,10 @@ it("Test sweep", async () => {
     TESTNET const WIF = "cUVdRNVobgjAw5jGWYkvbWmk42Vxzvte4btmsZ5qSqszdPi9M3Vy"
   */
   const WIF = "cUVdRNVobgjAw5jGWYkvbWmk42Vxzvte4btmsZ5qSqszdPi9M3Vy";
-  const network = "rvn-test";
+  const network = "aidp-test";
 
   //The wallet that will RECEIVE the funds
-  const wallet = await RavencoinWallet.createInstance({
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic:
       "frozen drift quiz glove wrong cycle glide increase hybrid arch endorse brisk",
     network,

@@ -1,8 +1,8 @@
-# ravencoin-jswallet
+# aidpcoin-jswallet
 
-Ravencoin wallet library for JavaScript.
+Aidpcoin wallet library for JavaScript.
 Non-custodial.
-By default it interacts with the Ravencoin blockchain using public RPC services from
+By default it interacts with the Aidpcoin blockchain using public RPC services from
 https://rpc.ting.finance/ for both testnet and mainnet.
 You are free to use any RPC-service you like, including your own.
 See section [Run your own blockchain node](#run-your-own-blockchain-node) for more info
@@ -20,28 +20,28 @@ This lib supports EVR as well (see section at the end)
 To run these code examples
 
 1. Create an empty npm project
-2. Install `@ravenrebels/ravencoin-jswallet`
+2. Install `@metavatem/aidpcoin-jswallet`
 3. Create a .mjs file called `index.mjs`
 
 ### Minimalistic example
 
 ```
-import RavencoinWallet from "@ravenrebels/ravencoin-jswallet";
+import AidpcoinWallet from "@metavatem/aidpcoin-jswallet";
 
-RavencoinWallet.createInstance({
+AidpcoinWallet.createInstance({
    mnemonic: "horse sort develop lab chest talk gift damp session sun festival squirrel",
-   network: "rvn-test"
+   network: "aidp-test"
 })
    .then(wallet => wallet.getBalance())
    .then(console.log);
 ```
 ### Some stuff you can do
 ```
-import RavencoinWallet from "@ravenrebels/ravencoin-jswallet";
-const wallet = await RavencoinWallet.createInstance({
+import AidpcoinWallet from "@metavatem/aidpcoin-jswallet";
+const wallet = await AidpcoinWallet.createInstance({
   mnemonic:
     "horse sort develop lab chest talk gift damp session sun festival squirrel",
-  network: "rvn-test",
+  network: "aidp-test",
 });
 
 //OK now you have your wallet
@@ -55,7 +55,7 @@ const addressObjects = wallet.getAddressObjects();
 //Get assets the wallet holds (not including mempool transactions) 
 const assets = await wallet.getAssets();
 
-//Get balance of base currency, like RVN, not including mempool transactions
+//Get balance of base currency, like AIDP, not including mempool transactions
 const balance = await wallet.getBalance();
 
 
@@ -82,37 +82,37 @@ console.log(sendResult.transactionId);
 In this example we run a local node in testnet mode, and RPC port is set to 8888
 
 ```
-const wallet = await RavencoinWallet.createInstance({
+const wallet = await AidpcoinWallet.createInstance({
     mnemonic,
-    network: "rvn-test",
+    network: "aidp-test",
     rpc_password: "mypassword",
     rpc_username: "myuser",
     rpc_url: "http://localhost:8888",
   });
 ```
 
-### Send RVN and ASSETS
+### Send AIDP and ASSETS
 
 ```
 //index.mjs very important that file extension is .mjs
-import RavencoinWallet from "@ravenrebels/ravencoin-jswallet";
+import AidpcoinWallet from "@metavatem/aidpcoin-jswallet";
 
 //This wallet belongs to account "Crazy Cat" on https://testnet.ting.finance/signin/
 const options = {
   mnemonic:
     "mesh beef tuition ensure apart picture rabbit tomato ancient someone alter embrace",
-  network: "rvn-test",
+  network: "aidp-test",
 };
-const wallet = await RavencoinWallet.createInstance(options);
+const wallet = await AidpcoinWallet.createInstance(options);
 const addy = await wallet.getReceiveAddress();
 console.log("My receive address", addy);
 
-//Send 100 RVN to Barry Crump on https://testnet.ting.finance/
+//Send 100 AIDP to Barry Crump on https://testnet.ting.finance/
 await wallet.send({
-  //Send 100 RVN
+  //Send 100 AIDP
   toAddress: "mhBKhj5FxzBu1h8U6pSB16pwmjP7xo4ehG",
   amount: 100,
-  assetName:"RVN",
+  assetName:"AIDP",
 });
 
 //Send 313 BUTTER tokens to Barry Crump on https://testnet.ting.finance/
@@ -128,15 +128,15 @@ console.log("Sending", transactionId);
 
 ```
 //index.mjs very important that file extension is .mjs
-import RavencoinWallet from "@ravenrebels/ravencoin-jswallet";
+import AidpcoinWallet from "@metavatem/aidpcoin-jswallet";
 
 //This wallet belongs to account "Crazy Cat" on https://testnet.ting.finance/signin/
 const options = {
   mnemonic:
     "mesh beef tuition ensure apart picture rabbit tomato ancient someone alter embrace",
-  network: "rvn-test",
+  network: "aidp-test",
 };
-const wallet = await RavencoinWallet.createInstance(options);
+const wallet = await AidpcoinWallet.createInstance(options);
 
 //Send asset BUTTER to multiple recipients
 const result = await wallet.sendMany({
@@ -153,7 +153,7 @@ console.log("Sending", result.transactionId);
 
 ## Evrmore
 
-To support EVR instead of RVN
+To support EVR instead of AIDP
 Create an instance of wallet and set baseCurrency
 
 ```
@@ -164,14 +164,14 @@ wallet.setBaseCurrency("EVR");
 
 When you create your instance of a wallet you can specify some stuff.
 
-You can set network to be something else than RVN, for example EVR.
+You can set network to be something else than AIDP, for example EVR.
 
 You can specify your own RPC node URL and username/password.
 
 ```
 export interface IOptions {
     mnemonic: string;
-    network?: ChainType; (that is "rvn" | "rvn-test" | "evr" | "evr-test")
+    network?: ChainType; (that is "aidp" | "aidp-test" | "evr" | "evr-test")
     rpc_username?: string;
     rpc_password?: string;
     rpc_url?: string;
@@ -187,7 +187,7 @@ With **RPC proxy** and **Cloudlare** you can get a secure endpoint like
 https://rpc.mydomain.com/rpc
 checkout
 
-- https://github.com/ravenrebels/ravencoin-rpc-proxy
+- https://github.com/metavatem/aidpcoin-rpc-proxy
 - https://www.cloudflare.com/products/tunnel/
 
 ## Advanced - pure RPC
@@ -196,11 +196,11 @@ You have access to the underlaying RPC function, wallet.rpc.
 See example
 
 ```
-import RavencoinWallet from "@ravenrebels/ravencoin-jswallet";
+import AidpcoinWallet from "@metavatem/aidpcoin-jswallet";
 async function main(){
-  const wallet = await RavencoinWallet.createInstance({
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic: "horse sort develop lab chest talk gift damp session sun festival squirrel",
-    network: "rvn-test",
+    network: "aidp-test",
   });
   const blockhash = await wallet.rpc("getbestblockhash", []);
   const block = await wallet.rpc("getblock", [blockhash]);

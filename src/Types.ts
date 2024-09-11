@@ -1,9 +1,9 @@
-import { Wallet } from "./ravencoinWallet";
+import { Wallet } from "./aidpcoinWallet";
 
 export interface ISettings {
   assets?: Array<string>;
-  baseCurrency: "RVN"; //TODO is this really needed? do we not get that info from the network attribute?
-  mode: "RAVENCOIN_AND_ASSETS" | "ASSETS" | "SOME_ASSETS";
+  baseCurrency: "AIDP"; //TODO is this really needed? do we not get that info from the network attribute?
+  mode: "AIDPCOIN_AND_ASSETS" | "ASSETS" | "SOME_ASSETS";
 
   subTagline?: string;
   tagline: string;
@@ -18,7 +18,7 @@ export interface ISend {
   forcedChangeAddressAssets?: string;
   forcedChangeAddressBaseCurrency?: string;
 }
-export type ChainType = "rvn" | "rvn-test" | "evr" | "evr-test";
+export type ChainType = "aidp" | "aidp-test" | "evr" | "evr-test";
 export interface IAddressDelta {
   address: string;
   assetName: string;
@@ -79,8 +79,8 @@ export interface ISendResult {
     outputs: any;
     privateKeys?: TPrivateKey;
     rawUnsignedTransaction?: string;
-    rvnAmount: number;
-    rvnChangeAmount: number;
+    aidpAmount: number;
+    aidpChangeAmount: number;
     signedTransaction?: string;
     UTXOs: IUTXO[];
     walletMempool: any;
@@ -217,9 +217,9 @@ export interface IUser {
   profileImageURL?: string;
 }
 export interface IConfig {
-  raven_username: string;
-  raven_password: string;
-  raven_url: string;
+  aidp_username: string;
+  aidp_password: string;
+  aidp_url: string;
   network: string;
 }
 

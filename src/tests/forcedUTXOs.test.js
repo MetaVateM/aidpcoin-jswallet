@@ -1,15 +1,15 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 const expect = require("chai").expect;
-const SendManyTransaction = RavencoinWallet.SendManyTransaction;
+const SendManyTransaction = AidpcoinWallet.SendManyTransaction;
 const crazyCatWalletPromise = require("./getWalletPromise");
 
-//Should have 10 RVN on testnet
+//Should have 10 AIDP on testnet
 const mnemonic =
   "salad hammer want used web finger comic gold trigger accident oblige pluck";
 
-const walletPromise = RavencoinWallet.createInstance({
+const walletPromise = AidpcoinWallet.createInstance({
   mnemonic,
-  network: "rvn-test",
+  network: "aidp-test",
   offlineMode: true,
 });
 

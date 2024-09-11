@@ -1,12 +1,12 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 
 //Account "Crazy Cat" on https://testnet.ting.finance/
 const mnemonic =
   "mesh beef tuition ensure apart picture rabbit tomato ancient someone alter embrace";
 
-const walletPromise = RavencoinWallet.createInstance({
+const walletPromise = AidpcoinWallet.createInstance({
   mnemonic,
-  network: "rvn-test",
+  network: "aidp-test",
 });
 
 module.exports = walletPromise;

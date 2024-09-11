@@ -1,13 +1,13 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 const expect = require("chai").expect;
 
 it("Test receive and change address", async () => {
   /* 
    Change address and receive address should NOT be the same
   */
-  const network = "rvn-test";
+  const network = "aidp-test";
 
-  const wallet = await RavencoinWallet.createInstance({
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic:
       "frozen drift quiz glove wrong cycle glide increase hybrid arch endorse brisk",
     network,

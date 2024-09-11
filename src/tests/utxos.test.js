@@ -1,11 +1,11 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 const expect = require("chai").expect;
 it("Test UTXOs for assets and base currency", async () => {
   const mnemonic =
     "mesh beef tuition ensure apart picture rabbit tomato ancient someone alter embrace";
 
-  const network = "rvn-test";
-  const wallet = await RavencoinWallet.createInstance({
+  const network = "aidp-test";
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic,
     network,
   });

@@ -1,9 +1,9 @@
-import RavencoinKey, { Network } from "@ravenrebels/ravencoin-key";
-import Signer from "@ravenrebels/ravencoin-sign-transaction";
+import AidpcoinKey, { Network } from "@metavatem/aidpcoin-key";
+import Signer from "@metavatem/aidpcoin-sign-transaction";
 
 !!Signer.sign; //"Idiocracy" but prevents bundle tools such as PARCEL to strip this dependency out on build.
 
-import { Wallet } from "../ravencoinWallet";
+import { Wallet } from "../aidpcoinWallet";
 import { IInput, SweepResult } from "../Types";
 import { shortenNumber } from "./SendManyTransaction";
 
@@ -22,7 +22,7 @@ export async function sweep(
   wallet: Wallet,
   onlineMode: boolean
 ): Promise<SweepResult> {
-  const privateKey = RavencoinKey.getAddressByWIF(wallet.network, WIF);
+  const privateKey = AidpcoinKey.getAddressByWIF(wallet.network, WIF);
 
   const result: SweepResult = {};
   const rpc = wallet.rpc;

@@ -1,7 +1,7 @@
 {
-  "name": "@ravenrebels/ravencoin-jswallet",
+  "name": "@metavatem/aidpcoin-jswallet",
   "version": "0.9.4",
-  "description": "Ravencoin JavaScript wallet library",
+  "description": "Aidpcoin JavaScript wallet library",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "files": [
@@ -11,29 +11,29 @@
   ],
   "types": "dist/types.d.ts",
   "scripts": {
-    "build": "parcel build ./src/ravencoinWallet.ts --no-cache",
+    "build": "parcel build ./src/aidpcoinWallet.ts --no-cache",
     "test": "mocha ./src/tests",
     "prepublishOnly": "npm run build",
     "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ravenrebels/ravencoin-jswallet.git"
+    "url": "git+https://github.com/metavatem/aidpcoin-jswallet.git"
   },
   "keywords": [
-    "Ravencoin"
+    "Aidpcoin"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ravenrebels/ravencoin-jswallet/issues"
+    "url": "https://github.com/metavatem/aidpcoin-jswallet/issues"
   },
   "dependencies": {
-    "@ravenrebels/ravencoin-key": "^2.8.0",
-    "@ravenrebels/ravencoin-rpc": "^0.4.1",
-    "@ravenrebels/ravencoin-sign-transaction": "^0.2.12"
+    "@metavatem/aidpcoin-key": "^2.8.0",
+    "@metavatem/aidpcoin-rpc": "^0.4.1",
+    "@metavatem/aidpcoin-sign-transaction": "^0.2.12"
   },
-  "homepage": "https://github.com/ravenrebels/ravencoin-jswallet#readme",
+  "homepage": "https://github.com/metavatem/aidpcoin-jswallet#readme",
   "devDependencies": {
     "@parcel/packager-ts": "^2.10.3",
     "@parcel/transformer-typescript-types": "^2.10.3",

@@ -1,19 +1,19 @@
-const RavencoinWallet = require("../../dist/index.cjs");
+const AidpcoinWallet = require("../../dist/index.cjs");
 const walletPromise = require("./getWalletPromise");
 const expect = require("chai").expect;
 //This mnemonic should be empty and super fast
 const mnemonic =
   "caught actress master salt kingdom february spot brief barrel apart rely common";
 
-it("Network rvn should give base currency RVN", async () => {
-  const network = "rvn";
-  const wallet = await RavencoinWallet.createInstance({
+it("Network aidp should give base currency AIDP", async () => {
+  const network = "aidp";
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic,
     network,
     offlineMode: true,
   });
   const baseCurrency = wallet.baseCurrency;
-  expect(baseCurrency).to.equal("RVN");
+  expect(baseCurrency).to.equal("AIDP");
 });
 
 it("Network evr should give base currency EVR", async () => {
@@ -22,7 +22,7 @@ it("Network evr should give base currency EVR", async () => {
 
   const network = "evr";
   try {
-    const wallet = await RavencoinWallet.createInstance({
+    const wallet = await AidpcoinWallet.createInstance({
       mnemonic,
       network,
       offlineMode: true,
@@ -36,16 +36,16 @@ it("Network evr should give base currency EVR", async () => {
   }
 });
 
-it("Network rvn-test should give base currency RVN", async () => {
-  const network = "rvn-test";
-  const wallet = await RavencoinWallet.createInstance({
+it("Network aidp-test should give base currency AIDP", async () => {
+  const network = "aidp-test";
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic,
     network,
     offlineMode: true,
   });
 
   const baseCurrency = wallet.baseCurrency;
-  expect(baseCurrency).to.equal("RVN");
+  expect(baseCurrency).to.equal("AIDP");
 });
 
 it("Network evr-test should give base currency EVR", async () => {
@@ -53,7 +53,7 @@ it("Network evr-test should give base currency EVR", async () => {
     "mesh beef tuition ensure apart picture rabbit tomato ancient someone alter embrace";
 
   const network = "evr-test";
-  const wallet = await RavencoinWallet.createInstance({
+  const wallet = await AidpcoinWallet.createInstance({
     mnemonic,
     network,
     offlineMode: true,
@@ -84,9 +84,9 @@ it("Min amount of addresses", async function () {
   this.timeout(30 * 1000); //30 seconds, generating tons of addresses
   const mnemonic = "bla bla bla";
   const minAmountOfAddresses = 1000;
-  wallet = await RavencoinWallet.createInstance({
+  wallet = await AidpcoinWallet.createInstance({
     mnemonic,
-    network: "rvn-test",
+    network: "aidp-test",
     minAmountOfAddresses,
     offlineMode: true,
   });

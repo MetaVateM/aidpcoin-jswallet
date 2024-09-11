@@ -1,5 +1,5 @@
-import { methods } from "@ravenrebels/ravencoin-rpc";
-import { Wallet } from "./ravencoinWallet";
+import { methods } from "@metavatem/aidpcoin-rpc";
+import { Wallet } from "./aidpcoinWallet";
 
 export async function getAssets(wallet: Wallet, addresses: string[]) {
   const includeAssets = true;
