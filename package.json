@@ -29,9 +29,9 @@
     "url": "https://github.com/metavatem/aidpcoin-jswallet/issues"
   },
   "dependencies": {
-    "aidpcoin-key":"github:metavatem/aidpcoin-key",
-    "aidpcoin-rpc":"github:metavatem/aidpcoin-rpc",
-    "aidpcoin-sign-transaction":"github:metavatem/aidpcoin-sign-transaction"
+    "@metavatem/aidpcoin-key": "^2.8.0",
+    "@metavatem/aidpcoin-rpc": "^0.4.1",
+    "@metavatem/aidpcoin-sign-transaction": "^0.2.12"
   },
   "homepage": "https://github.com/metavatem/aidpcoin-jswallet#readme",
   "devDependencies": {
